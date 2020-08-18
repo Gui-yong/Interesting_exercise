@@ -15,7 +15,7 @@ class Calculator:
         while True:
             x = input("请输入待计算的表达式，或者输入quit退出计算器: ")
             self.logger.info("输入：{}".format(x))
-            x = x.strip()  # 首先删除输入字符串中的空格
+            x = re.sub("\s+", "", x)  # 首先删除输入字符串中的空格
             if x == "quit":  # 是否退出
                 self.logger.info("退出计算器")
                 break
